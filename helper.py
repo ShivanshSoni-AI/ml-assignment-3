@@ -7,7 +7,7 @@ def inference(embedding_len,context_len,num_lines,prompt,activation_fn):
 
     # loading the pretrained model
     model = NextWordModel(22582,embedding_len,context_len,1024,activation_fn)
-    model.load_state_dict(torch.load(f'models/{embedding_len}_{context_len}_{activation_fn}.pth',map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load(f'{embedding_len}_{context_len}_{activation_fn}.pth',map_location=torch.device('cpu')))
     
     # loading the vocab and mappings
     with open('mappings.json','r') as f:
